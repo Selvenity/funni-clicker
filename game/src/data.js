@@ -1,13 +1,13 @@
 let ITEMS = [
     {
-        name: "Monkey",
-        description: "A monkey to help you press space. It doesn't really know what a <i>spacebar</i> is, so it will just bash the whole keyboard and eventually hit it. It succeeds every <b>%v seconds</b>.",
-        cost: 30,
+        name: "Melee Player",
+        description: "A melee player to help you out. They do succeed every <b>%v seconds, so you do have some luck on your hands by hiring a hungrybox or mang0. BTW It's every <b>%v seconds because of their reaction time. We remapped their controller stick to the space button since they just dash dance.</b>.",
+        cost: 50,
         initial_value: .2,
         lvl: 0,
         cost_func: (x) => 1.1 * x,
         value_func: (x) => x,
-        getDescription: (it) => it.description.replace("%v", 1.0 / it.initial_value),
+        getDescription: (it) => it.description.replace("%v", 0.7 / it.initial_value),
     },
     {
         name: "Boomer Mom",
@@ -98,6 +98,15 @@ let ITEMS = [
         value_func: (x) => 1.3 * x,
         getDescription: (it) => it.description.replace("%v", nfmt(it.value)),
     },
+    {
+        name: "Test",
+        description: "Hoping this works.",
+    cost: 100,
+        initial_value: 50,
+        lvl: 0,
+        cost_func: (x) => 1.5 * x,
+            value_func: (x) => 1.3 * x,
+        getDescription: (it) => it.description.replace("%v", nfmt(it.value)),
 ];
 
 (function() {
